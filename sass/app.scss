@@ -1,5 +1,31 @@
 @import "./variables.scss";
+// BOOTSTRAP
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
+
+
+//COMPONENTI 
 @import "./homepage.scss";
+@import "./player.scss";
 
 
+// STILI COMUNI E UTILITIES
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h5 {
+  color: white;
+}
+
+@media screen and (max-width: 768px) { //Su bootstrap non esiste
+  .col-xs-12 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}

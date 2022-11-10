@@ -1,3 +1,15 @@
 $primary: black;
 $secondary: #101010;
-$grey: #212121
+$grey: #212121;
+$light-grey: #c3c3c4;
+$green: #1ED760;
+$fit7: 14%;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 1px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+) !default;
