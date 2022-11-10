@@ -1,0 +1,11 @@
+.spotify__container {
+    height: 100vh;
+    background: -moz-linear-gradient(180deg, $grey 32%, $secondary 64%);
+    background: -webkit-linear-gradient(180deg, $grey 32%, $secondary 64%);
+    background: linear-gradient(180deg, $grey 32%, $secondary 64%);
+}
+.player {
+    background-color: $secondary;
+    height: 100px;
+    bottom: 0;
+}
