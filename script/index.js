@@ -90,7 +90,7 @@ const createRecentCard = (album) => {
 }
 
 const setupPlayer = (title, artist, preview, cover) => {
-  //! FASE DI RESET: 
+  //! FASE DI RESET:
   let playerIndicator = document.querySelector(".player__progress-indicator")
   let counter = 1
   //* reset dell'interval (il conto ricomincia da capo)
