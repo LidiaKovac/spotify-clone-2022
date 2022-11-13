@@ -4,10 +4,75 @@
   background: -moz-linear-gradient(180deg, $grey 32%, $secondary 64%);
   background: -webkit-linear-gradient(180deg, $grey 32%, $secondary 64%);
   background: linear-gradient(180deg, $grey 32%, $secondary 64%);
+  aside {
+    font-size: 13px;
+    &#sidebar__area {
+      svg {
+        width: 23px;
+        height: 23px;
 
+        margin-right: 20px;
+        color: white;
+      }
+      .menu__area {
+        .menu__single {
+          color: white;
+          font-size: 13px;
+        }
+      }
+      .menu__manage-area {
+        
+        .manage__command-single {
+          transition: color 0.3s;
+          &:hover {
+            color: white;
+          }
+        }
+        svg {
+          &#liked-songs {
+            padding: 5px;
+            background: rgb(255, 255, 255);
+            background: -moz-linear-gradient(
+              346deg,
+              rgba(255, 255, 255, 1) 0%,
+              rgba(144, 70, 252, 1) 100%
+            );
+            background: -webkit-linear-gradient(
+              346deg,
+              rgba(255, 255, 255, 1) 0%,
+              rgba(144, 70, 252, 1) 100%
+            );
+            background: linear-gradient(
+              346deg,
+              rgba(255, 255, 255, 1) 0%,
+              rgba(144, 70, 252, 1) 100%
+            );
+            border-radius: 2px;
+          }
+          &#saved-episodes {
+            padding: 5px;
+            border-radius: 2px;
+
+            color: #12b038;
+            background-color: #005e17;
+          }
+        }
+      }
+      .playlist__area {
+        height: 60%;
+        overflow-y: auto;
+        .playlist__single {
+          transition: color 0.2s;
+          &:hover {
+            color: white;
+          }
+        }
+      }
+    }
+  }
   main {
     overflow-y: auto;
-    height: 100%;
+    height: calc(100vh - 100px);
     // padding: {
     //   right: 30px;
     //   left: 30px;
@@ -26,10 +91,32 @@
       );
       background: linear-gradient(-145deg, transparent 10%, $primary 100%);
       border-radius: 5px;
+      padding: 20px;
+      img.adv__cover {
+          height: 100%;
+          width: auto;
+      }
+      button.adv__button {
+        padding: {
+          top: 10px;
+          bottom: 10px;
+          left: 25px;
+          right: 25px;
+        }
+        border: none;
+        border-radius: 30px;
+        &.play-btn {
+          background-color: $green;
+        }
+        &.save-btn {
+          background-color: transparent;
+          border: 1px $light-grey solid;
+          color: $light-grey;
+        }
+      }
     }
     .recent__container {
       .recent {
-
         .recent__card {
           background-color: rgb(255, 255, 255, 0.2);
           height: 80px;
@@ -41,7 +128,7 @@
           }
           .recent__card-title {
             margin-left: 10px;
-            width:60%
+            width: 60%;
           }
 
           .recent__card-player-button {
@@ -73,22 +160,25 @@
         }
       }
     }
-    .favorites {
+    .favorites, .shows, .liked {
       width: 100%;
-      .favorites__results {
+      .favorites__results, .shows__results, .liked__results {
         width: 100%;
-        gap: 10px;
+        overflow-y: auto;
+        margin-left: 0px;
         .song__card {
-          padding: 20px;
+          padding: 15px;
           background-color: $grey;
           border-radius: 5px;
-          width: $fit7;
-          height: 350px;
           .song__card-cover {
             width: 100%;
+            height: auto;
+            object-fit: cover;
           }
           .song__card-title {
-            
+          }
+          .song__card-artist {
+            font-size: 13px;
           }
         }
       }
