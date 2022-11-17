@@ -21,7 +21,7 @@ const fetchSongs = async () => {
   } catch (error) {
     let alert = document.querySelector(".alert strong")
     alert.innerText = error
-    alert.classList.add("show")
+    alert.parentElement.classList.add("show")
   }
 }
 
@@ -40,7 +40,7 @@ const searchSongs = async (query, container) => {
   } catch (error) {
     let alert = document.querySelector(".alert strong")
     alert.innerText = error
-    alert.classList.add("show")
+    alert.parentElement.classList.add("show")
 
   }
 }
@@ -68,7 +68,7 @@ const fillJumboTron = async (query) => {
   } catch (error) {
     let alert = document.querySelector(".alert strong")
     alert.innerText = error
-    alert.classList.add("show")
+    alert.parentElement.classList.add("show")
 
   }
 }
