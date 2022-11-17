@@ -33,7 +33,7 @@ const fetchTracks = async(id) => {
 
                     <div class="single__track-title col-4">${song.title}</div>
                     <div class="single__track-views col-3">${song.rank}</div>
-                    <div class="single__track-duration text-end col-3">${(song.duration / 60).toFixed(2)}</div>
+                    <div class="single__track-duration text-end col-3 d-none d-lg-block">${(song.duration / 60).toFixed(2)}</div>
 
 
                 </div> `
@@ -54,7 +54,6 @@ const filterPopular = async(target = document.querySelector(".discography__optio
     let sorted = tracks.sort((a,b) => a.rank - b.rank)
     let popular = []
     sorted.forEach((song)=> {
-        console.log(song)
         if(!popular.map(a => a.title).includes(song.album.title)) {
             popular.push(song.album)
         }
@@ -69,8 +68,7 @@ const renderOption = (arrayOfAlbums, artistName) => {
     let popContainer = document.querySelector(".option__container")
     popContainer.innerHTML = ""
     arrayOfAlbums.forEach((album)=> {
-        console.log(album)
-    popContainer.innerHTML += `<div class='col 
+    popContainer.innerHTML += `<div onclick="location.assign('./album.html?id=${album.id}')" class='col 
       col-xs-6 col-sm-4 col-md-3 col-xl-3 d-xl-block'> 
         <div class='song__card'> 
           <img class='song__card-cover' src='${album.cover_medium}'/> 
@@ -95,7 +93,6 @@ const filterAlbums = async(target = document.querySelector(".discography__option
     let allAlbums = songs.filter(song => song.artist.name === artistName).map(song => song.album)
     let uniqueAlbums = []
     allAlbums.forEach((album)=> {
-        console.log(album)
         if(!uniqueAlbums.map(a => a.title).includes(album.title)) {
             uniqueAlbums.push(album)
         }

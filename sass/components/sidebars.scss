@@ -1,5 +1,6 @@
 aside {
     font-size: 13px;
+    z-index: 2;
     &#sidebar__area {
       height: calc(100vh - 100px);
       svg {
@@ -66,6 +67,7 @@ aside {
       }
     }
     &#friends__area {
-      height: calc(100vh - 150px);
+      height: calc(100vh - 100px);
+
     }
   }

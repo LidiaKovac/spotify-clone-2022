@@ -2,7 +2,7 @@
 .artist__header {
     height: 40%;
     position: relative;
-
+    min-height: 150px;
     img {
         height: 100%;
         width: 100%;
@@ -16,9 +16,8 @@
         height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        gap: 20px;
-
+        justify-content: flex-end;
+        padding-bottom: 20px;
         .artist__verified {
 
             svg {

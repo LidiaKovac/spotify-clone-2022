@@ -1,0 +1,80 @@
+main {
+    position: relative;
+
+    .album__bg {
+        position: absolute;
+        width: 100%;
+        height: inherit;
+        z-index: 0 !important;
+        background-size: cover;
+
+        filter: blur(500px) brightness(100%) saturate(200%);
+        // usare filter risulta pesante sulla pagina, ma è il modo più "semplice"
+        // per colorare lo sfondo in base all'immagine di copertina
+
+    }
+
+    .album__header {
+        width: 100%;
+        padding-top: 100px !important;
+
+        * {
+
+            z-index: 1000;
+        }
+
+        .album__type {
+            font-variant: small-caps;
+            color: white;
+            mix-blend-mode: difference;
+        }
+
+        .artist__info {
+            img.artist__pic {
+                width: 30px;
+                aspect-ratio: 1/1;
+                object-fit: cover;
+                border-radius: 50px;
+            }
+            .artist__info--single {
+                width: fit-content;
+                mix-blend-mode: difference;
+                
+                text-align: center;
+                &.artist__name {
+                    display: inline-block;
+                    max-width: 150px;
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .album__data {
+        background: rgb(0, 0, 0);
+        background: -moz-linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 1) 66%);
+        background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 1) 66%);
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 1) 66%);
+        
+        .album__tracks {
+            * {
+                z-index: 1000;
+            }
+
+
+
+            .tracks__table-header {
+                font-variant: small-caps;
+                border-bottom: 1px rgb(255, 255, 255, 0.6) solid;
+            }
+        }
+
+        .album__related {
+            flex-wrap: nowrap;
+            overflow-y: auto;
+        }
+    }
+
+
+}

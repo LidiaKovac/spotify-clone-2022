@@ -46,22 +46,28 @@ const fillJumboTron = async (query) => {
       "https://striveschool-api.herokuapp.com/api/deezer/search?q=" + query
     )
     let { data: songs } = await res.json()
-    console.log(songs)
-    let advCover = document.querySelector("img.adv__cover")
-    let advTitle = document.querySelector(".adv__info h2")
-    let advAlbum = document.querySelectorAll(".adv__info p")
-    let playBtnJt = document.querySelector(".adv__button.play-btn")
     let { album, title, artist, preview } = songs[0]
-    advCover.src = album.cover_big
-    advTitle.innerText = title
-    advAlbum[0].innerText = artist.name
-    advAlbum[1].innerText = album.title
+
+    populateElement("img.adv__cover", "src", album.cover_big)
+    populateElement(".adv__info h2", "innerText", title)
+    populateElement(".adv__info p:first-of-type", "innerText", artist.name)
+    populateElement(".adv__info p:first-of-type", "onclick", ()=> window.location.assign(`/artist.html?id=${artist.id}`))
+    
+    populateElement(".adv__info p:nth-of-type(2)", "innerText", album.title)
+    populateElement(".adv__info p:nth-of-type(2)", "onclick", ()=> window.location.assign(`/album.html?id=${album.id}`))
+
+    let playBtnJt = document.querySelector(".adv__button.play-btn")
     playBtnJt.addEventListener("click", () => {
       setupPlayer(title, artist.name, preview, album.cover_big)
     })
   } catch (error) {
     console.log(error)
   }
+}
+
+const populateElement = (elementQuery, prop, value) => {
+  let elementToPop = document.querySelector(elementQuery)
+  elementToPop[prop] = value
 }
 
 // ! Rendering functions

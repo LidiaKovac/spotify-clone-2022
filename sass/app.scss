@@ -1,4 +1,5 @@
 @import "./variables.scss";
+@import "./mixins";
 // BOOTSTRAP
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
@@ -12,6 +13,7 @@
 //PAGINE
 @import "./pages/artist.scss";
 @import "./pages/homepage.scss";
+@import "./pages/album.scss";
 
 
 // STILI COMUNI E UTILITIES
@@ -38,6 +40,14 @@ h5 {
 
 .text-light-grey {
   color: $light-grey
+}
+
+.text-opaque-white {
+  color: rgb(255, 255, 255, 0.8);
+}
+
+.clickable {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) { //Su bootstrap non esiste
