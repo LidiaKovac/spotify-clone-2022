@@ -40,7 +40,7 @@ const playlistNames = [
 ]
 let interval //this will be the interval moving the indicator
 const playButton = document.querySelector(".player .play-btn")
-
+// ! ALL FETCHES
 const fetchSongs = async () => {
   try {
     for (const albumId of albums) {
@@ -55,6 +55,49 @@ const fetchSongs = async () => {
   }
 }
 
+const searchSongs = async (query, container) => {
+  try {
+    const favContainer = document.querySelector(`.${container}__results`)
+    document.querySelector(`.${container}__container`).innerText = query
+    let res = await fetch(
+      "https://striveschool-api.herokuapp.com/api/deezer/search?q=" + query
+    )
+    let { data: music } = await res.json()
+    //rimuovo le canzoni di natale (lol), mescolo l'array e lo taglio ai primi 7 elementi
+    let clean = music.sort(() => (Math.random() > 0.5 ? 1 : -1)).slice(0, 6)
+    console.log(clean)
+    renderSearchResults(clean, favContainer)
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+const fillJumboTron = async (query) => {
+  try {
+    let res = await fetch(
+      "https://striveschool-api.herokuapp.com/api/deezer/search?q=" + query
+    )
+    let { data: songs } = await res.json()
+    console.log(songs)
+    let advCover = document.querySelector("img.adv__cover")
+    let advTitle = document.querySelector(".adv__info h2")
+    let advAlbum = document.querySelectorAll(".adv__info p")
+    let playBtnJt = document.querySelector(".adv__button.play-btn")
+    let { album, title, artist, preview } = songs[0]
+    advCover.src = album.cover_big
+    advTitle.innerText = title
+    advAlbum[0].innerText = artist.name
+    advAlbum[1].innerText = album.title
+    playBtnJt.addEventListener("click", () => {
+      setupPlayer(title, artist.name, preview, album.cover_big)
+    })
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+// ! Rendering functions
+
 const createRecentCard = (album) => {
   let recentContainer = document.querySelector(".recent__container .recent")
   recentContainer.innerHTML += `
@@ -63,11 +106,11 @@ const createRecentCard = (album) => {
     class="recent__card d-flex flex-row g-0" onclick="setupPlayer('${album.tracks.data[0].title}', '${album.artist.name}', '${album.tracks.data[0].preview}', '${album.cover_medium}')"
   >
     <img class="recent__card-img " src="${album.cover_medium}" />
-    <div
-      class="recent__card-title  text-truncate text-white my-auto fw-bold "
-    >
+    
+    <a class="recent__card-title  text-truncate text-white my-auto fw-bold " href='/album.html?id=${album.id}'> 
       ${album.title}
-    </div>
+    </a>
+    
     <div class="recent__card-player-button text-center my-auto d-none d-lg-block">
       <button class="text-center" >
         <svg
@@ -87,6 +130,74 @@ const createRecentCard = (album) => {
   </div>
   </div>
     `
+}
+
+const renderSearchResults = (songs, container) => {
+  // title, artist, preview, cover
+
+  songs.forEach((song, i) => {
+    container.innerHTML += `
+    <div class=' col ${
+      i > 3 ? "d-none" : ""
+    } col-xs-6 col-sm-3 col-md-3 col-xl-2 d-xl-block'> 
+      <div class='song__card' onclick="setupPlayer('${song.title}', '${
+      song.artist.name
+    }', '${song.preview}', '${song.album.cover_big}')"> 
+        <img class='song__card-cover' src='${song.album.cover_medium}'/> 
+        <div class='song__card-title mt-1 text-truncate fw-bold text-white'>  
+        <a href='/album.html?id=${song.album.id}'> 
+        ${song.title} 
+        </a>
+        </div>
+        <div class='song__card-artist text-light-grey text-truncate'>
+        <a href='/artist.html?id=${song.artist.id}'> 
+          ${song.artist.name}
+        </a>
+        </div>
+      </div> 
+     </div>
+     `
+  })
+}
+
+const loadPlaylist = () => {
+  const playlistContainer = document.querySelector(".playlist__area")
+  playlistNames.forEach((playlist) => {
+    playlistContainer.innerHTML += `
+    <div class="playlist__single px-4 py-2 align-items-center text-light-grey text-truncate" >
+    ${playlist}
+  </div>
+    `
+  })
+}
+
+// ! Player functions
+const handlePlayerBar = (event) => {
+  console.log({ t: event.target.offsetWidth })
+  const playerAudio = document.querySelector(".player audio")
+
+  let clickedPoint = Math.ceil(event.layerX)
+  let totalBarWidth = Math.ceil(event.target.offsetWidth)
+  let percentage = (clickedPoint * 100) / totalBarWidth
+  event.target.parentElement.children[1].style.left = percentage + "%"
+  event.target.value = percentage
+  clearInterval(interval)
+
+  let counter = 1
+  let moveMusicTo = (percentage * playerAudio.duration) / 100
+  console.log(moveMusicTo)
+  clearInterval(interval)
+
+  playerAudio.currentTime = moveMusicTo
+  counter = moveMusicTo + 1
+  interval = setInterval(() => {
+    event.target.value = Math.ceil((counter * 100) / playerAudio.duration)
+    console.log(Math.ceil((counter * 100) / playerAudio.duration))
+    counter++
+    if (Math.ceil(counter) === Math.ceil(playerAudio.duration)) {
+      clearInterval(interval)
+    }
+  }, 1000)
 }
 
 const setupPlayer = (title, artist, preview, cover) => {
@@ -123,71 +234,6 @@ const setupPlayer = (title, artist, preview, cover) => {
   playerCover.src = cover
 }
 
-const searchSongs = async (query, container) => {
-  try {
-    const favContainer = document.querySelector(`.${container}__results`)
-    document.querySelector(`.${container}__container`).innerText = query
-    let res = await fetch(
-      "https://striveschool-api.herokuapp.com/api/deezer/search?q=" + query
-    )
-    let { data: music } = await res.json()
-    //rimuovo le canzoni di natale (lol), mescolo l'array e lo taglio ai primi 7 elementi
-    let clean = music.sort(() => (Math.random() > 0.5 ? 1 : -1)).slice(0, 6)
-    console.log(clean)
-    renderSearchResults(clean, favContainer)
-  } catch (error) {
-    console.log(error)
-  }
-}
-
-const renderSearchResults = (songs, container) => {
-  // title, artist, preview, cover
-
-  songs.forEach((song, i) => {
-    container.innerHTML += `
-    <div class=' col ${
-      i > 3 ? "d-none" : ""
-    } col-xs-6 col-sm-3 col-md-3 col-xl-2 d-xl-block'> 
-      <div class='song__card' onclick="setupPlayer('${song.title}', '${
-      song.artist.name
-    }', '${song.preview}', '${song.album.cover_big}')"> 
-        <img class='song__card-cover' src='${song.album.cover_medium}'/> 
-        <div class='song__card-title mt-1 text-truncate fw-bold text-white'>  
-        ${song.title}
-        </div>
-        <div class='song__card-artist text-light-grey text-truncate'>
-          ${song.artist.name}
-        </div>
-      </div> 
-     </div>
-     `
-  })
-}
-
-const fillJumboTron = async (query) => {
-  try {
-    let res = await fetch(
-      "https://striveschool-api.herokuapp.com/api/deezer/search?q=" + query
-    )
-    let { data: songs } = await res.json()
-    console.log(songs)
-    let advCover = document.querySelector("img.adv__cover")
-    let advTitle = document.querySelector(".adv__info h2")
-    let advAlbum = document.querySelectorAll(".adv__info p")
-    let playBtnJt = document.querySelector(".adv__button.play-btn")
-    let { album, title, artist, preview } = songs[0]
-    advCover.src = album.cover_big
-    advTitle.innerText = title
-    advAlbum[0].innerText = artist.name
-    advAlbum[1].innerText = album.title
-    playBtnJt.addEventListener("click", () => {
-      setupPlayer(title, artist.name, preview, album.cover_big)
-    })
-  } catch (error) {
-    console.log(error)
-  }
-}
-
 const toggleMusic = () => {
   const playerAudio = document.querySelector(".player audio")
   if (playerAudio.readyState > 0) {
@@ -196,7 +242,7 @@ const toggleMusic = () => {
     console.log(isPlaying)
     if (!isPlaying) {
       console.log("this is pause")
-      clearInterval(id)
+      clearInterval(interval)
       // playerAudio.pause()
       playButton.innerHTML = `<svg
     xmlns="http://www.w3.org/2000/svg"
@@ -222,7 +268,6 @@ const toggleMusic = () => {
 }
 
 const handlePlay = () => {
-  console.log("m")
   const playerAudio = document.querySelector(".player audio")
 
   const isPlaying = playerAudio.duration > 0 && !playerAudio.paused
@@ -232,22 +277,13 @@ const handlePlay = () => {
   toggleMusic()
 }
 
-const loadPlaylist = () => {
-  const playlistContainer = document.querySelector(".playlist__area")
-  playlistNames.forEach((playlist) => {
-    playlistContainer.innerHTML += `
-    <div class="playlist__single px-4 py-2 align-items-center text-light-grey text-truncate" >
-    ${playlist}
-  </div>
-    `
-  })
-}
+// ! onload
 
 window.onload = async () => {
   await Promise.all([
     fetchSongs(),
     searchSongs("pinguini tattici nucleari", "favorites"),
-    searchSongs("Chorus Line OST", "liked"),
+    searchSongs("Chorus Line", "liked"),
     searchSongs("High School Musical Cast", "shows"),
     fillJumboTron("abcdef  you"),
   ])

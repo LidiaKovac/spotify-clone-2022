@@ -129,6 +129,7 @@
           .recent__card-title {
             margin-left: 10px;
             width: 60%;
+            text-decoration: none;
           }
 
           .recent__card-player-button {
@@ -176,9 +177,14 @@
             object-fit: cover;
           }
           .song__card-title {
+            
           }
           .song__card-artist {
             font-size: 13px;
+          }
+          a {
+            text-decoration: none;
+            color: white;
           }
         }
       }

@@ -5,8 +5,11 @@
 
 
 //COMPONENTI 
-@import "./homepage.scss";
-@import "./player.scss";
+@import "./components/player.scss";
+
+//PAGINE
+@import "./pages/artist.scss";
+@import "./pages/homepage.scss";
 
 
 // STILI COMUNI E UTILITIES

@@ -18207,6 +18207,88 @@ textarea.form-control-lg {
   content: "\f83e";
 }
 
+.player {
+  padding: 15px;
+}
+.player .player__track img.player__track-cover {
+  width: 70px;
+  height: 70px;
+}
+.player .player__track .player__track-info .player__track-title {
+  font-size: 13px;
+  width: 200px;
+}
+.player .player__track .player__track-info .player__track-artist {
+  font-size: 12px;
+  color: #c3c3c4;
+}
+.player .player__track .player__track-like svg:first-of-type {
+  color: white;
+}
+.player .player__track .player__track-like svg:last-of-type {
+  color: #1ED760;
+}
+.player .player__track .player__track-like:hover svg:first-of-type {
+  display: none;
+}
+.player .player__track .player__track-like:hover svg:last-of-type {
+  display: block !important;
+}
+.player .player__main {
+  width: 30%;
+}
+.player .player__main .player__main-controls .player-btn {
+  background: transparent;
+  border: none;
+}
+.player .player__main .player__main-controls .player-btn svg {
+  color: white;
+  width: 100%;
+  height: 100%;
+}
+.player .player__main .player__main-controls .player-btn.play-btn {
+  width: 45px;
+  height: 45px;
+}
+.player .player__main .player__main-controls .player-btn.previous, .player .player__main .player__main-controls .player-btn.next {
+  width: 35px;
+  height: 35px;
+}
+.player .player__main .player__main-progress-bar {
+  position: relative;
+}
+.player .player__main .player__main-progress-bar .player__progress-bar {
+  width: 100%;
+  height: 3px;
+  background-color: #c3c3c4;
+}
+.player .player__main .player__main-progress-bar .player__progress-indicator {
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  position: absolute;
+  top: 12px;
+  left: 0;
+  border-radius: 10px;
+}
+.player .player__volume div.player__icon {
+  width: 30px;
+  padding: 5px;
+}
+.player .player__volume div.player__icon svg {
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+.player .player__volume div.player__icon.player__icon-volume {
+  width: 40px;
+}
+.player .player__volume .player__volume-bar {
+  width: 100px;
+  height: 3px;
+  background-color: #c3c3c4;
+}
+
 .spotify__container {
   width: 100%;
   height: 100vh;
@@ -18306,6 +18388,7 @@ textarea.form-control-lg {
 .spotify__container main .recent__container .recent .recent__card .recent__card-title {
   margin-left: 10px;
   width: 60%;
+  text-decoration: none;
 }
 .spotify__container main .recent__container .recent .recent__card .recent__card-player-button {
   opacity: 0;
@@ -18351,6 +18434,10 @@ textarea.form-control-lg {
 .spotify__container main .favorites .favorites__results .song__card .song__card-artist, .spotify__container main .favorites .shows__results .song__card .song__card-artist, .spotify__container main .favorites .liked__results .song__card .song__card-artist, .spotify__container main .shows .favorites__results .song__card .song__card-artist, .spotify__container main .shows .shows__results .song__card .song__card-artist, .spotify__container main .shows .liked__results .song__card .song__card-artist, .spotify__container main .liked .favorites__results .song__card .song__card-artist, .spotify__container main .liked .shows__results .song__card .song__card-artist, .spotify__container main .liked .liked__results .song__card .song__card-artist {
   font-size: 13px;
 }
+.spotify__container main .favorites .favorites__results .song__card a, .spotify__container main .favorites .shows__results .song__card a, .spotify__container main .favorites .liked__results .song__card a, .spotify__container main .shows .favorites__results .song__card a, .spotify__container main .shows .shows__results .song__card a, .spotify__container main .shows .liked__results .song__card a, .spotify__container main .liked .favorites__results .song__card a, .spotify__container main .liked .shows__results .song__card a, .spotify__container main .liked .liked__results .song__card a {
+  text-decoration: none;
+  color: white;
+}
 
 .player {
   width: 100%;
@@ -18384,88 +18471,6 @@ textarea.form-control-lg {
   color: white;
   width: 30px;
   height: 30px;
-}
-
-.player {
-  padding: 15px;
-}
-.player .player__track img.player__track-cover {
-  width: 70px;
-  height: 70px;
-}
-.player .player__track .player__track-info .player__track-title {
-  font-size: 13px;
-  width: 200px;
-}
-.player .player__track .player__track-info .player__track-artist {
-  font-size: 12px;
-  color: #c3c3c4;
-}
-.player .player__track .player__track-like svg:first-of-type {
-  color: white;
-}
-.player .player__track .player__track-like svg:last-of-type {
-  color: #1ED760;
-}
-.player .player__track .player__track-like:hover svg:first-of-type {
-  display: none;
-}
-.player .player__track .player__track-like:hover svg:last-of-type {
-  display: block !important;
-}
-.player .player__main {
-  width: 30%;
-}
-.player .player__main .player__main-controls .player-btn {
-  background: transparent;
-  border: none;
-}
-.player .player__main .player__main-controls .player-btn svg {
-  color: white;
-  width: 100%;
-  height: 100%;
-}
-.player .player__main .player__main-controls .player-btn.play-btn {
-  width: 45px;
-  height: 45px;
-}
-.player .player__main .player__main-controls .player-btn.previous, .player .player__main .player__main-controls .player-btn.next {
-  width: 35px;
-  height: 35px;
-}
-.player .player__main .player__main-progress-bar {
-  position: relative;
-}
-.player .player__main .player__main-progress-bar .player__progress-bar {
-  width: 100%;
-  height: 3px;
-  background-color: #c3c3c4;
-}
-.player .player__main .player__main-progress-bar .player__progress-indicator {
-  width: 10px;
-  height: 10px;
-  background-color: white;
-  position: absolute;
-  top: -3px;
-  left: 0;
-  border-radius: 10px;
-}
-.player .player__volume div.player__icon {
-  width: 30px;
-  padding: 5px;
-}
-.player .player__volume div.player__icon svg {
-  width: 100%;
-  height: 100%;
-  color: white;
-}
-.player .player__volume div.player__icon.player__icon-volume {
-  width: 40px;
-}
-.player .player__volume .player__volume-bar {
-  width: 100px;
-  height: 3px;
-  background-color: #c3c3c4;
 }
 
 * {
