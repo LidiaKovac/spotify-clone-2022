@@ -7,6 +7,7 @@
   aside {
     font-size: 13px;
     &#sidebar__area {
+      height: calc(100vh - 100px);
       svg {
         width: 23px;
         height: 23px;
@@ -15,12 +16,14 @@
         color: white;
       }
       .menu__area {
+        // height: 25%;
         .menu__single {
           color: white;
           font-size: 13px;
         }
       }
       .menu__manage-area {
+        // height: 25%;
         
         .manage__command-single {
           transition: color 0.3s;
@@ -59,7 +62,6 @@
         }
       }
       .playlist__area {
-        height: 60%;
         overflow-y: auto;
         .playlist__single {
           transition: color 0.2s;
@@ -68,6 +70,9 @@
           }
         }
       }
+    }
+    &#friends__area {
+      height: calc(100vh - 150px);
     }
   }
   main {
@@ -82,7 +87,6 @@
     }
     .adv {
       margin: 10px;
-      height: 30%;
       background: -moz-linear-gradient(-145deg, transparent 10%, $primary 100%);
       background: -webkit-linear-gradient(
         -145deg,
@@ -93,8 +97,7 @@
       border-radius: 5px;
       padding: 20px;
       img.adv__cover {
-          height: 100%;
-          width: auto;
+          aspect-ratio: 1/1;
       }
       button.adv__button {
         padding: {
