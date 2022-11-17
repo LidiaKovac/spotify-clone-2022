@@ -19,7 +19,9 @@ const fetchSongs = async () => {
       createRecentCard(album)
     }
   } catch (error) {
-    console.log(error)
+    let alert = document.querySelector(".alert strong")
+    alert.innerText = error
+    alert.classList.add("show")
   }
 }
 
@@ -36,7 +38,10 @@ const searchSongs = async (query, container) => {
     console.log(clean)
     renderSearchResults(clean, favContainer)
   } catch (error) {
-    console.log(error)
+    let alert = document.querySelector(".alert strong")
+    alert.innerText = error
+    alert.classList.add("show")
+
   }
 }
 
@@ -61,7 +66,10 @@ const fillJumboTron = async (query) => {
       setupPlayer(title, artist.name, preview, album.cover_big)
     })
   } catch (error) {
-    console.log(error)
+    let alert = document.querySelector(".alert strong")
+    alert.innerText = error
+    alert.classList.add("show")
+
   }
 }
 

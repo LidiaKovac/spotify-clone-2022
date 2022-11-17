@@ -9,6 +9,10 @@
   </head>
 
   <body>
+    <div class="alert d-none alert-danger alert-dismissible fade show" role="alert">
+      <strong>Holy guacamole!</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
     <div class="spotify__container row g-0">
       <aside
         id="sidebar__area"
@@ -109,7 +113,7 @@
       </main>
       <aside
         id="friends__area"
-        class="bg-primary col col-md-2 h-100 d-md-none d-lg-block"
+        class="bg-primary col col-md-2  d-md-none d-lg-block"
       ></aside>
     </div>
     <div
@@ -238,9 +242,9 @@
           </button>
         </div>
         <div class="player__main-progress-bar">
-          <progress value="0" min="0" max="100" class="player__progress-bar" onclick="handleProgressBar(event)"></progress >
-          <div class="player__progress-indicator"></div>
-        </div>
+          <input type="range" value="0" min="0" max="30" class="player__progress-bar"
+              onchange="handleProgressBar(event)"></progress>
+      </div>
       </div>
       <div class="player__volume d-flex align-items-center">
         <div class="player__icon player__icon-mic">

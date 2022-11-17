@@ -43,6 +43,9 @@ const loadPlaylist = () => {
     })
 }
 
+const hideAlert = (ev) => {
+    ev.target.parentElement.classList.remove("show")
+}
 
 const handleProgressBar = (event) => {
     let curr = Number(event.target.value)
@@ -170,3 +173,7 @@ let homeButton = document.querySelector(".menu__area .menu__single")
 homeButton.addEventListener("click", () => {
     location.assign("/index.html")
 })
+
+
+let closeAlertBtns = document.querySelector("button.btn-close")
+closeAlertBtns.addEventListener("click", hideAlert)

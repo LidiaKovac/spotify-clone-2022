@@ -50,6 +50,14 @@ h5 {
   cursor: pointer;
 }
 
+.alert {
+  position: fixed;
+  bottom: 150px;
+  z-index: 2000;
+  right: 10px;
+
+}
+
 @media screen and (max-width: 768px) { //Su bootstrap non esiste
   .col-xs-12 {
     flex: 0 0 auto;

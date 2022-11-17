@@ -21,24 +21,31 @@ const replaceDiacritics = (string) => {
 }
 
 const fetchArtist = async (query) => {
-    let res = await fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=" +  replaceDiacritics(query))
-    let {data:songs} = await res.json()
-    console.log(songs[0].artist.name.toLowerCase(),query)
-    let allAlbums = songs.filter(song => song.artist.name.toLowerCase() === query.toLowerCase()).map(song => song.album)
-    let uniqueAlbums = []
-    allAlbums.forEach((album)=> {
-        if(!uniqueAlbums.map(a => a.title).includes(album.title)) {
-            uniqueAlbums.push(album)
-        }
-    })
-    renderRelated(uniqueAlbums)
+    try {
+
+        let res = await fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=" + replaceDiacritics(query))
+        let { data: songs } = await res.json()
+        console.log(songs[0].artist.name.toLowerCase(), query)
+        let allAlbums = songs.filter(song => song.artist.name.toLowerCase() === query.toLowerCase()).map(song => song.album)
+        let uniqueAlbums = []
+        allAlbums.forEach((album) => {
+            if (!uniqueAlbums.map(a => a.title).includes(album.title)) {
+                uniqueAlbums.push(album)
+            }
+        })
+        renderRelated(uniqueAlbums)
+    } catch (error) {
+        let alert = document.querySelector(".alert strong")
+    alert.innerText = error
+    alert.classList.add("show")
+    }
 }
 
 const renderRelated = (arrayOfAlbums) => {
     console.log(arrayOfAlbums)
     let relatedContainer = document.querySelector(".album__related")
-    arrayOfAlbums.forEach((album)=> {
-    relatedContainer.innerHTML += `<div onclick="location.assign('./album.html?id=${album.id}')" class='col 
+    arrayOfAlbums.forEach((album) => {
+        relatedContainer.innerHTML += `<div onclick="location.assign('./album.html?id=${album.id}')" class='col 
       col-xs-6 col-sm-4 col-md-3 col-xl-3 d-xl-block'> 
         <div class='song__card'> 
           <img class='song__card-cover' src="${album.cover_medium}"/> 
@@ -56,28 +63,38 @@ const renderRelated = (arrayOfAlbums) => {
 
 
 const fetchAlbum = async (id) => {
-    let res = await fetch("https://striveschool-api.herokuapp.com/api/deezer/album/" + id)
-    let album = await res.json()
-    populateElement(".album__bg", "style", `background-image: url("${album.cover_xl}")`)
-    populateElement(".album__cover", "src", album.cover_xl)
-    populateElement("h1", "innerText", album.title)
-    populateElement("span.album__related-title", "innerText", album.title)
+    try {
 
-    populateElement(".album__type", "innerText", album.record_type)
-    populateElement(".artist__info img.artist__pic", "src", album.artist.picture_xl)
-    populateElement(".artist__info .artist__name", "innerText", album.artist.name)
-    populateElement(".artist__info .artist__name", "href", `/artist.html?id=${album.artist.id}`)
-    
-    populateElement(".artist__info .album__year", "innerText", album.release_date.split("-")[0])
-    populateElement(".artist__info .album__track-number", "innerText", album.nb_tracks + " brani")
-    populateElement(".artist__info .album__duration", "innerText", getDurationString(album.duration))
 
-    if (album.tracks.data) {
-        populateTracks(album.tracks.data)
-        await fetchArtist(album.contributors[0].name)
-    } else {
-        let resTracks = await fetch("https://striveschool-api.herokuapp.com/api/deezer/album/" + id + "/tracks")
-        let tracks = await resTracks.json()
+        let res = await fetch("https://striveschool-api.herokuapp.com/api/deezer/album/" + id)
+        let album = await res.json()
+        populateElement(".album__bg", "style", `background-image: url("${album.cover_xl}")`)
+        populateElement(".album__cover", "src", album.cover_xl)
+        populateElement("h1", "innerText", album.title)
+        populateElement("span.album__related-title", "innerText", album.title)
+
+        populateElement(".album__type", "innerText", album.record_type)
+        populateElement(".artist__info img.artist__pic", "src", album.artist.picture_xl)
+        populateElement(".artist__info .artist__name", "innerText", album.artist.name)
+        populateElement(".artist__info .artist__name", "href", `/artist.html?id=${album.artist.id}`)
+
+        populateElement(".artist__info .album__year", "innerText", album.release_date.split("-")[0])
+        populateElement(".artist__info .album__track-number", "innerText", album.nb_tracks + " brani")
+        populateElement(".artist__info .album__duration", "innerText", getDurationString(album.duration))
+
+        if (album.tracks.data) {
+            if(album.tracks.data.length<= 0)  throw new Error("No songs!")
+            else {
+
+                populateTracks(album.tracks.data)
+                await fetchArtist(album.contributors[0].name)
+            }
+        }
+    } catch (error) {
+        console.log(error);
+        let alert = document.querySelector(".alert strong")
+        alert.innerText = error
+        alert.classList.add("show")
     }
 }
 
@@ -92,10 +109,9 @@ const replaceQuotes = (string) => {
 const populateTracks = (tracks) => {
     let tracksCont = document.querySelector(".album__tracks")
     tracks.forEach((track, i) => {
-        
-        tracksCont.innerHTML += `<div onclick='setupPlayer("${replaceQuotes(track.title)}", "${
-            replaceQuotes(track.artist.name)
-          }", "${track.preview}", "${track.album.cover_big}")' class="tracks__table-single clickable mx-3 py-3 row justify-content-between text-white">
+
+        tracksCont.innerHTML += `<div onclick='setupPlayer("${replaceQuotes(track.title)}", "${replaceQuotes(track.artist.name)
+            }", "${track.preview}", "${track.album.cover_big}")' class="tracks__table-single clickable mx-3 py-3 row justify-content-between text-white">
     <div class="col-1">${i + 1}</div>
     <div class="col-5 text-truncate">${track.title_short}</div>
     <div class="col-4">${track.rank}</div>
