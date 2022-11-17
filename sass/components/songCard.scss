@@ -1,0 +1,20 @@
+.song__card {
+    padding: 15px;
+    background-color: $grey;
+    border-radius: 5px;
+    .song__card-cover {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    .song__card-title {
+      
+    }
+    .song__card-artist {
+      font-size: 13px;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }

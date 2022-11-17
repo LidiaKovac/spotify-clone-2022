@@ -1,0 +1,88 @@
+
+.artist__header {
+    height: 40%;
+    position: relative;
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .artist__header-content {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+
+        .artist__verified {
+
+            svg {
+                color: #5C92FE;
+                mix-blend-mode: normal;
+            }
+        }
+
+        h1 {
+            font-size: 50px;
+            mix-blend-mode: difference;
+        }
+    }
+}
+.artist__controls-area {
+* {
+    font-variant:small-caps;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+.artist__play-button  {
+    background-color: transparent;
+    border: none;
+    width: 60px;
+    height: 60px;
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.artist__follow-button {
+    background-color: transparent;
+    border: 1px white solid;
+    border-radius: 2px;
+    height: 30px;
+}
+}
+
+.artist__track-single {
+    height: 50px;
+
+    .single__track-cover {
+        width: 50px;
+        height: 100%;
+    }
+}
+
+.discography__option {
+    button {
+        background-color: rgb(255, 255, 255, 0.1);
+        color: white;
+        border: 1px white solid;
+        border-radius: 50px;
+    }
+    .option--active {
+        background-color: white;
+        color: black;
+    }
+}
+.option__container {
+    flex-wrap: nowrap;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}

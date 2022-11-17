@@ -6,6 +6,8 @@
 
 //COMPONENTI 
 @import "./components/player.scss";
+@import "./components/sidebars.scss";
+@import "./components/songCard.scss";
 
 //PAGINE
 @import "./pages/artist.scss";
@@ -24,6 +26,14 @@ h4,
 h5,
 h5 {
   color: white;
+}
+
+.bg-green {
+  background-color: $green;
+}
+
+.text-green {
+  color: $green;
 }
 
 .text-light-grey {

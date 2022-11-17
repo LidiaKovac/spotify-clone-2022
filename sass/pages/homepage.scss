@@ -4,77 +4,7 @@
   background: -moz-linear-gradient(180deg, $grey 32%, $secondary 64%);
   background: -webkit-linear-gradient(180deg, $grey 32%, $secondary 64%);
   background: linear-gradient(180deg, $grey 32%, $secondary 64%);
-  aside {
-    font-size: 13px;
-    &#sidebar__area {
-      height: calc(100vh - 100px);
-      svg {
-        width: 23px;
-        height: 23px;
-
-        margin-right: 20px;
-        color: white;
-      }
-      .menu__area {
-        // height: 25%;
-        .menu__single {
-          color: white;
-          font-size: 13px;
-        }
-      }
-      .menu__manage-area {
-        // height: 25%;
-        
-        .manage__command-single {
-          transition: color 0.3s;
-          &:hover {
-            color: white;
-          }
-        }
-        svg {
-          &#liked-songs {
-            padding: 5px;
-            background: rgb(255, 255, 255);
-            background: -moz-linear-gradient(
-              346deg,
-              rgba(255, 255, 255, 1) 0%,
-              rgba(144, 70, 252, 1) 100%
-            );
-            background: -webkit-linear-gradient(
-              346deg,
-              rgba(255, 255, 255, 1) 0%,
-              rgba(144, 70, 252, 1) 100%
-            );
-            background: linear-gradient(
-              346deg,
-              rgba(255, 255, 255, 1) 0%,
-              rgba(144, 70, 252, 1) 100%
-            );
-            border-radius: 2px;
-          }
-          &#saved-episodes {
-            padding: 5px;
-            border-radius: 2px;
-
-            color: #12b038;
-            background-color: #005e17;
-          }
-        }
-      }
-      .playlist__area {
-        overflow-y: auto;
-        .playlist__single {
-          transition: color 0.2s;
-          &:hover {
-            color: white;
-          }
-        }
-      }
-    }
-    &#friends__area {
-      height: calc(100vh - 150px);
-    }
-  }
+  
   main {
     overflow-y: auto;
     height: calc(100vh - 100px);
