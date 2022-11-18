@@ -36,7 +36,7 @@ const loadPlaylist = () => {
     const playlistContainer = document.querySelector(".playlist__area")
     playlistNames.forEach((playlist) => {
         playlistContainer.innerHTML += `
-      <div class="playlist__single px-4 py-2 align-items-center text-light-grey text-truncate" >
+      <div class="playlist__single clickable px-4 py-2 align-items-center text-light-grey text-truncate" >
       ${playlist}
     </div>
       `
@@ -166,6 +166,11 @@ const handlePlay = () => {
         playerAudio.pause()
     } else playerAudio.play()
     toggleMusic()
+}
+
+const handleVolume = (event) => {
+    const playerAudio = document.querySelector(".player audio")
+    playerAudio.volume = event.target.value / 100
 }
 
 loadPlaylist()

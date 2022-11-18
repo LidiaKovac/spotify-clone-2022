@@ -114,6 +114,11 @@
     }
   }
   .player__volume {
+    input[type="range"] {
+      width: 30%;
+        height: 3px;
+        background-color: $light-grey;
+    }
     div.player__icon {
         width: 30px;
         padding: 5px;

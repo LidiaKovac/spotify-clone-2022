@@ -1,7 +1,9 @@
 let url = new URLSearchParams(location.search)
 let id = url.get("id")
 window.onload = async () => {
+  if(!id) window.location.assign("/index.html")
   await fetchArtist(id)
+  await fetchTracks(id)
   await filterPopular()
 }
 
@@ -18,7 +20,6 @@ const fetchArtist = async (id) => {
       "innerText",
       artist.nb_fan
     )
-    await fetchTracks(id)
   } catch (error) {
     console.log(error)
     let alert = document.querySelector(".alert strong")
@@ -89,7 +90,14 @@ const filterPopular = async (
         "/top?limit=50"
     )
     let { data: tracks } = await res.json()
-    if (tracks.length <= 0) throw new Error("No songs!")
+    if (tracks.length <= 0) {
+      await filterAlbums()
+      let popularTitle = document.querySelector("h2.pop-title")
+      popularTitle.remove()
+      let popularSection = document.querySelector(".artist__popular-tracks")
+      popularSection.remove()
+      throw new Error("No songs!")
+    }
     let sorted = tracks.sort((a, b) => a.rank - b.rank)
     let popular = []
     sorted.forEach((song) => {

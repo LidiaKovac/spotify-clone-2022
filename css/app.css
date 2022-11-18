@@ -1006,51 +1006,51 @@ progress {
     margin-left: 91.66666667%;
   }
   .g-sm-0,
-.gx-sm-0 {
+  .gx-sm-0 {
     --bs-gutter-x: 0;
   }
   .g-sm-0,
-.gy-sm-0 {
+  .gy-sm-0 {
     --bs-gutter-y: 0;
   }
   .g-sm-1,
-.gx-sm-1 {
+  .gx-sm-1 {
     --bs-gutter-x: 0.25rem;
   }
   .g-sm-1,
-.gy-sm-1 {
+  .gy-sm-1 {
     --bs-gutter-y: 0.25rem;
   }
   .g-sm-2,
-.gx-sm-2 {
+  .gx-sm-2 {
     --bs-gutter-x: 0.5rem;
   }
   .g-sm-2,
-.gy-sm-2 {
+  .gy-sm-2 {
     --bs-gutter-y: 0.5rem;
   }
   .g-sm-3,
-.gx-sm-3 {
+  .gx-sm-3 {
     --bs-gutter-x: 1rem;
   }
   .g-sm-3,
-.gy-sm-3 {
+  .gy-sm-3 {
     --bs-gutter-y: 1rem;
   }
   .g-sm-4,
-.gx-sm-4 {
+  .gx-sm-4 {
     --bs-gutter-x: 1.5rem;
   }
   .g-sm-4,
-.gy-sm-4 {
+  .gy-sm-4 {
     --bs-gutter-y: 1.5rem;
   }
   .g-sm-5,
-.gx-sm-5 {
+  .gx-sm-5 {
     --bs-gutter-x: 3rem;
   }
   .g-sm-5,
-.gy-sm-5 {
+  .gy-sm-5 {
     --bs-gutter-y: 3rem;
   }
 }
@@ -1175,51 +1175,51 @@ progress {
     margin-left: 91.66666667%;
   }
   .g-md-0,
-.gx-md-0 {
+  .gx-md-0 {
     --bs-gutter-x: 0;
   }
   .g-md-0,
-.gy-md-0 {
+  .gy-md-0 {
     --bs-gutter-y: 0;
   }
   .g-md-1,
-.gx-md-1 {
+  .gx-md-1 {
     --bs-gutter-x: 0.25rem;
   }
   .g-md-1,
-.gy-md-1 {
+  .gy-md-1 {
     --bs-gutter-y: 0.25rem;
   }
   .g-md-2,
-.gx-md-2 {
+  .gx-md-2 {
     --bs-gutter-x: 0.5rem;
   }
   .g-md-2,
-.gy-md-2 {
+  .gy-md-2 {
     --bs-gutter-y: 0.5rem;
   }
   .g-md-3,
-.gx-md-3 {
+  .gx-md-3 {
     --bs-gutter-x: 1rem;
   }
   .g-md-3,
-.gy-md-3 {
+  .gy-md-3 {
     --bs-gutter-y: 1rem;
   }
   .g-md-4,
-.gx-md-4 {
+  .gx-md-4 {
     --bs-gutter-x: 1.5rem;
   }
   .g-md-4,
-.gy-md-4 {
+  .gy-md-4 {
     --bs-gutter-y: 1.5rem;
   }
   .g-md-5,
-.gx-md-5 {
+  .gx-md-5 {
     --bs-gutter-x: 3rem;
   }
   .g-md-5,
-.gy-md-5 {
+  .gy-md-5 {
     --bs-gutter-y: 3rem;
   }
 }
@@ -1344,51 +1344,51 @@ progress {
     margin-left: 91.66666667%;
   }
   .g-lg-0,
-.gx-lg-0 {
+  .gx-lg-0 {
     --bs-gutter-x: 0;
   }
   .g-lg-0,
-.gy-lg-0 {
+  .gy-lg-0 {
     --bs-gutter-y: 0;
   }
   .g-lg-1,
-.gx-lg-1 {
+  .gx-lg-1 {
     --bs-gutter-x: 0.25rem;
   }
   .g-lg-1,
-.gy-lg-1 {
+  .gy-lg-1 {
     --bs-gutter-y: 0.25rem;
   }
   .g-lg-2,
-.gx-lg-2 {
+  .gx-lg-2 {
     --bs-gutter-x: 0.5rem;
   }
   .g-lg-2,
-.gy-lg-2 {
+  .gy-lg-2 {
     --bs-gutter-y: 0.5rem;
   }
   .g-lg-3,
-.gx-lg-3 {
+  .gx-lg-3 {
     --bs-gutter-x: 1rem;
   }
   .g-lg-3,
-.gy-lg-3 {
+  .gy-lg-3 {
     --bs-gutter-y: 1rem;
   }
   .g-lg-4,
-.gx-lg-4 {
+  .gx-lg-4 {
     --bs-gutter-x: 1.5rem;
   }
   .g-lg-4,
-.gy-lg-4 {
+  .gy-lg-4 {
     --bs-gutter-y: 1.5rem;
   }
   .g-lg-5,
-.gx-lg-5 {
+  .gx-lg-5 {
     --bs-gutter-x: 3rem;
   }
   .g-lg-5,
-.gy-lg-5 {
+  .gy-lg-5 {
     --bs-gutter-y: 3rem;
   }
 }
@@ -1513,51 +1513,51 @@ progress {
     margin-left: 91.66666667%;
   }
   .g-xl-0,
-.gx-xl-0 {
+  .gx-xl-0 {
     --bs-gutter-x: 0;
   }
   .g-xl-0,
-.gy-xl-0 {
+  .gy-xl-0 {
     --bs-gutter-y: 0;
   }
   .g-xl-1,
-.gx-xl-1 {
+  .gx-xl-1 {
     --bs-gutter-x: 0.25rem;
   }
   .g-xl-1,
-.gy-xl-1 {
+  .gy-xl-1 {
     --bs-gutter-y: 0.25rem;
   }
   .g-xl-2,
-.gx-xl-2 {
+  .gx-xl-2 {
     --bs-gutter-x: 0.5rem;
   }
   .g-xl-2,
-.gy-xl-2 {
+  .gy-xl-2 {
     --bs-gutter-y: 0.5rem;
   }
   .g-xl-3,
-.gx-xl-3 {
+  .gx-xl-3 {
     --bs-gutter-x: 1rem;
   }
   .g-xl-3,
-.gy-xl-3 {
+  .gy-xl-3 {
     --bs-gutter-y: 1rem;
   }
   .g-xl-4,
-.gx-xl-4 {
+  .gx-xl-4 {
     --bs-gutter-x: 1.5rem;
   }
   .g-xl-4,
-.gy-xl-4 {
+  .gy-xl-4 {
     --bs-gutter-y: 1.5rem;
   }
   .g-xl-5,
-.gx-xl-5 {
+  .gx-xl-5 {
     --bs-gutter-x: 3rem;
   }
   .g-xl-5,
-.gy-xl-5 {
+  .gy-xl-5 {
     --bs-gutter-y: 3rem;
   }
 }
@@ -1682,51 +1682,51 @@ progress {
     margin-left: 91.66666667%;
   }
   .g-xxl-0,
-.gx-xxl-0 {
+  .gx-xxl-0 {
     --bs-gutter-x: 0;
   }
   .g-xxl-0,
-.gy-xxl-0 {
+  .gy-xxl-0 {
     --bs-gutter-y: 0;
   }
   .g-xxl-1,
-.gx-xxl-1 {
+  .gx-xxl-1 {
     --bs-gutter-x: 0.25rem;
   }
   .g-xxl-1,
-.gy-xxl-1 {
+  .gy-xxl-1 {
     --bs-gutter-y: 0.25rem;
   }
   .g-xxl-2,
-.gx-xxl-2 {
+  .gx-xxl-2 {
     --bs-gutter-x: 0.5rem;
   }
   .g-xxl-2,
-.gy-xxl-2 {
+  .gy-xxl-2 {
     --bs-gutter-y: 0.5rem;
   }
   .g-xxl-3,
-.gx-xxl-3 {
+  .gx-xxl-3 {
     --bs-gutter-x: 1rem;
   }
   .g-xxl-3,
-.gy-xxl-3 {
+  .gy-xxl-3 {
     --bs-gutter-y: 1rem;
   }
   .g-xxl-4,
-.gx-xxl-4 {
+  .gx-xxl-4 {
     --bs-gutter-x: 1.5rem;
   }
   .g-xxl-4,
-.gy-xxl-4 {
+  .gy-xxl-4 {
     --bs-gutter-y: 1.5rem;
   }
   .g-xxl-5,
-.gx-xxl-5 {
+  .gx-xxl-5 {
     --bs-gutter-x: 3rem;
   }
   .g-xxl-5,
-.gy-xxl-5 {
+  .gy-xxl-5 {
     --bs-gutter-y: 3rem;
   }
 }
@@ -4267,11 +4267,11 @@ textarea.form-control-lg {
     border-bottom-right-radius: 0;
   }
   .card-group > .card:not(:last-child) .card-img-top,
-.card-group > .card:not(:last-child) .card-header {
+  .card-group > .card:not(:last-child) .card-header {
     border-top-right-radius: 0;
   }
   .card-group > .card:not(:last-child) .card-img-bottom,
-.card-group > .card:not(:last-child) .card-footer {
+  .card-group > .card:not(:last-child) .card-footer {
     border-bottom-right-radius: 0;
   }
   .card-group > .card:not(:first-child) {
@@ -4279,11 +4279,11 @@ textarea.form-control-lg {
     border-bottom-left-radius: 0;
   }
   .card-group > .card:not(:first-child) .card-img-top,
-.card-group > .card:not(:first-child) .card-header {
+  .card-group > .card:not(:first-child) .card-header {
     border-top-left-radius: 0;
   }
   .card-group > .card:not(:first-child) .card-img-bottom,
-.card-group > .card:not(:first-child) .card-footer {
+  .card-group > .card:not(:first-child) .card-footer {
     border-bottom-left-radius: 0;
   }
 }
@@ -5351,7 +5351,7 @@ textarea.form-control-lg {
 }
 @media (min-width: 992px) {
   .modal-lg,
-.modal-xl {
+  .modal-xl {
     --bs-modal-width: 800px;
   }
 }
@@ -5392,7 +5392,7 @@ textarea.form-control-lg {
     border-radius: 0;
   }
   .modal-fullscreen-sm-down .modal-header,
-.modal-fullscreen-sm-down .modal-footer {
+  .modal-fullscreen-sm-down .modal-footer {
     border-radius: 0;
   }
   .modal-fullscreen-sm-down .modal-body {
@@ -5412,7 +5412,7 @@ textarea.form-control-lg {
     border-radius: 0;
   }
   .modal-fullscreen-md-down .modal-header,
-.modal-fullscreen-md-down .modal-footer {
+  .modal-fullscreen-md-down .modal-footer {
     border-radius: 0;
   }
   .modal-fullscreen-md-down .modal-body {
@@ -5432,7 +5432,7 @@ textarea.form-control-lg {
     border-radius: 0;
   }
   .modal-fullscreen-lg-down .modal-header,
-.modal-fullscreen-lg-down .modal-footer {
+  .modal-fullscreen-lg-down .modal-footer {
     border-radius: 0;
   }
   .modal-fullscreen-lg-down .modal-body {
@@ -5452,7 +5452,7 @@ textarea.form-control-lg {
     border-radius: 0;
   }
   .modal-fullscreen-xl-down .modal-header,
-.modal-fullscreen-xl-down .modal-footer {
+  .modal-fullscreen-xl-down .modal-footer {
     border-radius: 0;
   }
   .modal-fullscreen-xl-down .modal-body {
@@ -5472,7 +5472,7 @@ textarea.form-control-lg {
     border-radius: 0;
   }
   .modal-fullscreen-xxl-down .modal-header,
-.modal-fullscreen-xxl-down .modal-footer {
+  .modal-fullscreen-xxl-down .modal-footer {
     border-radius: 0;
   }
   .modal-fullscreen-xxl-down .modal-body {
@@ -5809,7 +5809,7 @@ textarea.form-control-lg {
 }
 @media (prefers-reduced-motion: reduce) {
   .carousel-fade .active.carousel-item-start,
-.carousel-fade .active.carousel-item-end {
+  .carousel-fade .active.carousel-item-end {
     transition: none;
   }
 }
@@ -5834,7 +5834,7 @@ textarea.form-control-lg {
 }
 @media (prefers-reduced-motion: reduce) {
   .carousel-control-prev,
-.carousel-control-next {
+  .carousel-control-next {
     transition: none;
   }
 }
@@ -6002,7 +6002,7 @@ textarea.form-control-lg {
 
 @media (prefers-reduced-motion: reduce) {
   .spinner-border,
-.spinner-grow {
+  .spinner-grow {
     --bs-spinner-animation-speed: 1.5s;
   }
 }
@@ -18210,6 +18210,55 @@ textarea.form-control-lg {
 .player {
   padding: 15px;
 }
+.player input[type=range] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+}
+.player input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+.player input[type=range]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+.player input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  /* Hides the slider so custom styles can be added */
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+.player input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 10px;
+  width: 10px;
+  border-radius: 10px;
+  background: #ffffff;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+}
+.player input[type=range]::-moz-range-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 10px;
+  width: 10px;
+  border-radius: 10px;
+  background: #ffffff;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+}
+.player input[type=range]::-ms-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 10px;
+  width: 10px;
+  border-radius: 10px;
+  background: #ffffff;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+}
 .player .player__track img.player__track-cover {
   width: 70px;
   height: 70px;
@@ -18271,6 +18320,11 @@ textarea.form-control-lg {
   left: 0;
   border-radius: 10px;
 }
+.player .player__volume input[type=range] {
+  width: 30%;
+  height: 3px;
+  background-color: #c3c3c4;
+}
 .player .player__volume div.player__icon {
   width: 30px;
   padding: 5px;
@@ -18289,33 +18343,30 @@ textarea.form-control-lg {
   background-color: #c3c3c4;
 }
 
-.spotify__container {
-  width: 100%;
-  height: 100vh;
-  background: -moz-linear-gradient(180deg, #212121 32%, #101010 64%);
-  background: -webkit-linear-gradient(180deg, #212121 32%, #101010 64%);
-  background: linear-gradient(180deg, #212121 32%, #101010 64%);
-}
-.spotify__container aside {
+aside {
   font-size: 13px;
+  z-index: 1;
 }
-.spotify__container aside#sidebar__area svg {
+aside#sidebar__area {
+  height: calc(100vh - 100px);
+}
+aside#sidebar__area svg {
   width: 23px;
   height: 23px;
   margin-right: 20px;
   color: white;
 }
-.spotify__container aside#sidebar__area .menu__area .menu__single {
+aside#sidebar__area .menu__area .menu__single {
   color: white;
   font-size: 13px;
 }
-.spotify__container aside#sidebar__area .menu__manage-area .manage__command-single {
+aside#sidebar__area .menu__manage-area .manage__command-single {
   transition: color 0.3s;
 }
-.spotify__container aside#sidebar__area .menu__manage-area .manage__command-single:hover {
+aside#sidebar__area .menu__manage-area .manage__command-single:hover {
   color: white;
 }
-.spotify__container aside#sidebar__area .menu__manage-area svg#liked-songs {
+aside#sidebar__area .menu__manage-area svg#liked-songs {
   padding: 5px;
   background: rgb(255, 255, 255);
   background: -moz-linear-gradient(346deg, rgb(255, 255, 255) 0%, rgb(144, 70, 252) 100%);
@@ -18323,21 +18374,127 @@ textarea.form-control-lg {
   background: linear-gradient(346deg, rgb(255, 255, 255) 0%, rgb(144, 70, 252) 100%);
   border-radius: 2px;
 }
-.spotify__container aside#sidebar__area .menu__manage-area svg#saved-episodes {
+aside#sidebar__area .menu__manage-area svg#saved-episodes {
   padding: 5px;
   border-radius: 2px;
   color: #12b038;
   background-color: #005e17;
 }
-.spotify__container aside#sidebar__area .playlist__area {
-  height: 60%;
+aside#sidebar__area .playlist__area {
   overflow-y: auto;
 }
-.spotify__container aside#sidebar__area .playlist__area .playlist__single {
+aside#sidebar__area .playlist__area .playlist__single {
   transition: color 0.2s;
 }
-.spotify__container aside#sidebar__area .playlist__area .playlist__single:hover {
+aside#sidebar__area .playlist__area .playlist__single:hover {
   color: white;
+}
+aside#friends__area {
+  height: calc(100vh - 100px);
+}
+
+.song__card {
+  padding: 15px;
+  background-color: #212121;
+  border-radius: 5px;
+}
+.song__card .song__card-cover {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.song__card .song__card-artist {
+  font-size: 13px;
+}
+.song__card a {
+  text-decoration: none;
+  color: white;
+}
+
+.artist__header {
+  height: 40%;
+  position: relative;
+  min-height: 150px;
+}
+.artist__header img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.artist__header .artist__header-content {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 20px;
+}
+.artist__header .artist__header-content .artist__verified svg {
+  color: #5C92FE;
+  mix-blend-mode: normal;
+}
+.artist__header .artist__header-content h1, .artist__header .artist__header-content .h1 {
+  font-size: 50px;
+  mix-blend-mode: difference;
+}
+
+.artist__controls-area * {
+  font-variant: small-caps;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+.artist__controls-area .artist__play-button {
+  background-color: transparent;
+  border: none;
+  width: 60px;
+  height: 60px;
+}
+.artist__controls-area .artist__play-button svg {
+  width: 100%;
+  height: 100%;
+}
+.artist__controls-area .artist__follow-button {
+  background-color: transparent;
+  border: 1px white solid;
+  border-radius: 2px;
+  height: 30px;
+}
+
+.artist__track-single {
+  height: 50px;
+}
+.artist__track-single .single__track-cover {
+  width: 50px;
+  height: 100%;
+}
+
+.discography__option button {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px white solid;
+  border-radius: 50px;
+}
+.discography__option .option--active {
+  background-color: white;
+  color: black;
+}
+
+.option__container {
+  flex-wrap: nowrap;
+  overflow-y: auto;
+}
+.option__container::-webkit-scrollbar {
+  display: none;
+}
+
+.spotify__container {
+  width: 100%;
+  height: 100vh;
+  background: -moz-linear-gradient(180deg, #212121 32%, #101010 64%);
+  background: -webkit-linear-gradient(180deg, #212121 32%, #101010 64%);
+  background: linear-gradient(180deg, #212121 32%, #101010 64%);
 }
 .spotify__container main {
   overflow-y: auto;
@@ -18348,7 +18505,6 @@ textarea.form-control-lg {
 }
 .spotify__container main .adv {
   margin: 10px;
-  height: 30%;
   background: -moz-linear-gradient(-145deg, transparent 10%, black 100%);
   background: -webkit-linear-gradient(-145deg, transparent 10%, black 100%);
   background: linear-gradient(-145deg, transparent 10%, black 100%);
@@ -18356,8 +18512,7 @@ textarea.form-control-lg {
   padding: 20px;
 }
 .spotify__container main .adv img.adv__cover {
-  height: 100%;
-  width: auto;
+  aspect-ratio: 1/1;
 }
 .spotify__container main .adv button.adv__button {
   padding-top: 10px;
@@ -18421,23 +18576,6 @@ textarea.form-control-lg {
   overflow-y: auto;
   margin-left: 0px;
 }
-.spotify__container main .favorites .favorites__results .song__card, .spotify__container main .favorites .shows__results .song__card, .spotify__container main .favorites .liked__results .song__card, .spotify__container main .shows .favorites__results .song__card, .spotify__container main .shows .shows__results .song__card, .spotify__container main .shows .liked__results .song__card, .spotify__container main .liked .favorites__results .song__card, .spotify__container main .liked .shows__results .song__card, .spotify__container main .liked .liked__results .song__card {
-  padding: 15px;
-  background-color: #212121;
-  border-radius: 5px;
-}
-.spotify__container main .favorites .favorites__results .song__card .song__card-cover, .spotify__container main .favorites .shows__results .song__card .song__card-cover, .spotify__container main .favorites .liked__results .song__card .song__card-cover, .spotify__container main .shows .favorites__results .song__card .song__card-cover, .spotify__container main .shows .shows__results .song__card .song__card-cover, .spotify__container main .shows .liked__results .song__card .song__card-cover, .spotify__container main .liked .favorites__results .song__card .song__card-cover, .spotify__container main .liked .shows__results .song__card .song__card-cover, .spotify__container main .liked .liked__results .song__card .song__card-cover {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-.spotify__container main .favorites .favorites__results .song__card .song__card-artist, .spotify__container main .favorites .shows__results .song__card .song__card-artist, .spotify__container main .favorites .liked__results .song__card .song__card-artist, .spotify__container main .shows .favorites__results .song__card .song__card-artist, .spotify__container main .shows .shows__results .song__card .song__card-artist, .spotify__container main .shows .liked__results .song__card .song__card-artist, .spotify__container main .liked .favorites__results .song__card .song__card-artist, .spotify__container main .liked .shows__results .song__card .song__card-artist, .spotify__container main .liked .liked__results .song__card .song__card-artist {
-  font-size: 13px;
-}
-.spotify__container main .favorites .favorites__results .song__card a, .spotify__container main .favorites .shows__results .song__card a, .spotify__container main .favorites .liked__results .song__card a, .spotify__container main .shows .favorites__results .song__card a, .spotify__container main .shows .shows__results .song__card a, .spotify__container main .shows .liked__results .song__card a, .spotify__container main .liked .favorites__results .song__card a, .spotify__container main .liked .shows__results .song__card a, .spotify__container main .liked .liked__results .song__card a {
-  text-decoration: none;
-  color: white;
-}
 
 .player {
   width: 100%;
@@ -18473,6 +18611,67 @@ textarea.form-control-lg {
   height: 30px;
 }
 
+main {
+  position: relative;
+}
+main .album__bg {
+  position: absolute;
+  width: 100%;
+  height: inherit;
+  z-index: 0 !important;
+  background-size: cover;
+  filter: blur(500px) brightness(100%) saturate(200%);
+}
+main .album__header {
+  width: 100%;
+  padding-top: 100px !important;
+}
+main .album__header * {
+  z-index: 1000;
+}
+main .album__header .album__type {
+  font-variant: small-caps;
+  color: white;
+  mix-blend-mode: difference;
+}
+main .album__header .artist__info img.artist__pic {
+  width: 30px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 50px;
+}
+main .album__header .artist__info .artist__info--single {
+  width: fit-content;
+  mix-blend-mode: difference;
+  text-align: center;
+}
+main .album__header .artist__info .artist__info--single.artist__name {
+  display: inline-block;
+  max-width: 150px;
+  color: white;
+  text-decoration: none;
+}
+main .album__data {
+  background: rgb(0, 0, 0);
+  background: -moz-linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgb(0, 0, 0) 66%);
+  background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgb(0, 0, 0) 66%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgb(0, 0, 0) 66%);
+}
+main .album__data .album__tracks * {
+  z-index: 1000;
+}
+main .album__data .album__tracks .tracks__table-header {
+  font-variant: small-caps;
+  border-bottom: 1px rgba(255, 255, 255, 0.6) solid;
+}
+main .album__data .album__related {
+  flex-wrap: nowrap;
+  overflow-y: auto;
+}
+main .album__data .album__related::-webkit-scrollbar {
+  display: none;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -18490,8 +18689,51 @@ h5 {
   color: white;
 }
 
+.bg-green {
+  background-color: #1ED760;
+}
+
+.text-green {
+  color: #1ED760;
+}
+
 .text-light-grey {
   color: #c3c3c4;
+}
+
+.text-opaque-white {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.alert {
+  z-index: 4;
+  position: fixed;
+  bottom: 10%;
+  z-index: 2000;
+  right: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 @media screen and (max-width: 768px) {
