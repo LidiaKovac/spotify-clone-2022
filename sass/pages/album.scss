@@ -73,6 +73,9 @@ main {
         .album__related {
             flex-wrap: nowrap;
             overflow-y: auto;
+            &::-webkit-scrollbar {
+                display: none;
+            }
         }
     }
 
