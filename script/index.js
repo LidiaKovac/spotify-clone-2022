@@ -89,7 +89,7 @@ const createRecentCard = (album) => {
   >
     <img class="recent__card-img " src="${album.cover_medium}" />
     
-    <a class="recent__card-title  text-truncate text-white my-auto fw-bold " href='/album.html?id=${album.id}'> 
+    <a class="recent__card-title  text-truncate text-white my-auto fw-bold " href='./album.html?id=${album.id}'> 
       ${album.title}
     </a>
     
@@ -127,12 +127,12 @@ const renderSearchResults = (songs, container) => {
     }', '${song.preview}', '${song.album.cover_big}')"> 
         <img class='song__card-cover' src='${song.album.cover_medium}'/> 
         <div class='song__card-title mt-1 text-truncate fw-bold text-white'>  
-        <a href='/album.html?id=${song.album.id}'> 
+        <a href='./album.html?id=${song.album.id}'> 
         ${song.title} 
         </a>
         </div>
         <div class='song__card-artist text-light-grey text-truncate'>
-        <a href='/artist.html?id=${song.artist.id}'> 
+        <a href='./artist.html?id=${song.artist.id}'> 
           ${song.artist.name}
         </a>
         </div>
