@@ -53,9 +53,9 @@ main {
 
     .album__data {
         background: rgb(0, 0, 0);
-        background: -moz-linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 1) 66%);
-        background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 1) 66%);
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 1) 66%);
+        background: -moz-linear-gradient(180deg, rgb(0, 0, 0, 0.6) 0%, rgb(0, 0, 0, 1) 66%);
+        background: -webkit-linear-gradient(180deg, rgb(0, 0, 0, 0.6) 0%, rgb(0, 0, 0, 1) 66%);
+        background: linear-gradient(180deg, rgb(0, 0, 0, 0.6) 0%, rgb(0, 0, 0, 1) 66%);
         
         .album__tracks {
             * {
