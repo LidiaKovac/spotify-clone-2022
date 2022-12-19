@@ -18,6 +18,11 @@ const fetchSongs = async () => {
       let album = await res.json()
       createRecentCard(album)
     }
+
+
+
+
+    
   } catch (error) {
     let alert = document.querySelector(".alert strong")
     alert.innerText = error
