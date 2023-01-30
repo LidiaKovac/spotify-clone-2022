@@ -10998,7 +10998,7 @@ aside#friends__area {
   justify-content: flex-end;
   padding-bottom: 20px;
 }
-.artist__header .artist__header-content .artist__verified svg {
+.artist__header .artist__header-content .artist__verified i {
   color: #5C92FE;
   mix-blend-mode: normal;
 }
@@ -11010,17 +11010,11 @@ aside#friends__area {
 .artist__controls-area * {
   font-variant: small-caps;
   text-transform: uppercase;
-  font-size: 13px;
 }
 .artist__controls-area .artist__play-button {
   background-color: transparent;
   border: none;
-  width: 60px;
-  height: 60px;
-}
-.artist__controls-area .artist__play-button svg {
-  width: 100%;
-  height: 100%;
+  font-size: 50px;
 }
 .artist__controls-area .artist__follow-button {
   background-color: transparent;
