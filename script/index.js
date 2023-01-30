@@ -1,96 +1,96 @@
-const albums = [
-  "5327691",
-  "363906907",
-  "217489292",
-  "359324967",
-  "313482367",
-  "65373012",
-]
+const albums = ["365432517", "363906907", "308643687", "359324967", "313482367", "65373012"];
 
+const APIurl = "https://striveschool-api.herokuapp.com/api/deezer";
 
-// ! ALL FETCHES
+//* FETCH:
+
+//! FETCHA GLI ALBUM NELL'ARRAY
+//CHIAMATA ONLOAD
 const fetchSongs = async () => {
   try {
     for (const albumId of albums) {
-      let res = await fetch(
-        `https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`
-      )
-      let album = await res.json()
-      createRecentCard(album)
+      let res = await fetch(`${APIurl}/album/${albumId}`);
+      let album = await res.json();
+      createRecentCard(album); //renderizza gli album nella sezione "buon pomeriggio"
     }
-
-
-
-
-    
   } catch (error) {
-    let alert = document.querySelector(".alert strong")
-    alert.innerText = error
-    alert.parentElement.classList.add("show")
+    let alert = document.querySelector(".alert strong");
+    alert.innerText = error;
+    alert.parentElement.classList.add("show");
   }
-}
+};
 
+//!FETCHA IN BASE ALLA QUERY E RENDERIZZA IN UN CONTAINER SPECIFICO
+//CHIAMATA ON LOAD (=> e' possibile riutilizzare questa funzione per una pagina di ricerca)
 const searchSongs = async (query, container) => {
   try {
-    const favContainer = document.querySelector(`.${container}__results`)
-    document.querySelector(`.${container}__container`).innerText = query
-    let res = await fetch(
-      "https://striveschool-api.herokuapp.com/api/deezer/search?q=" + query
-    )
-    let { data: music } = await res.json()
-    //rimuovo le canzoni di natale (lol), mescolo l'array e lo taglio ai primi 7 elementi
-    let clean = music.sort(() => (Math.random() > 0.5 ? 1 : -1)).slice(0, 6)
-    console.log(clean)
-    renderSearchResults(clean, favContainer)
+    const chosenContainer = document.querySelector(`.${container}__results`); //nella pagina ci sono tre "row" con lo stesso schema di classi CSS
+    //la prima riga e' favorites__results
+    //la seconda riga e' shows__results
+    //la terza riga e' liked__results
+    //in questo modo posso passare la sezione in cui voglio mettere le mie canzoni come parametro e riutilizzare la stessa funzione per le tre righe
+    populateElement(`.${container}__container`, "innerText", query); //stessa cosa per favorites__container, shows__container e liked__container,
+    //che contengono la parte "variabile" del titolo della riga
+    //NB: populateElement prende come parametri un selettore CSS, una proprieta' e un valore, vedi sotto
+    let res = await fetch(`${APIurl}/search?q=${query}`);
+    let { data: music } = await res.json(); //decostruzione della risposta
+    let clean = music
+      //tengo solo le canzoni dello stesso artista per pulire un po' i risultati
+      .filter((song) => song.artist.name.toLowerCase() === query.toLowerCase())
+      //ordina per rank
+      .sort((a, b) => b.rank - a.rank)
+      //prendi solo le prime 6 canzoni
+      .slice(0, 6);
+    renderSearchResults(clean, chosenContainer); //renderizzo le canzoni filtrate, ordinate e tagliate nel contenitore che passo come parametro
   } catch (error) {
-    let alert = document.querySelector(".alert strong")
-    alert.innerText = error
-    alert.parentElement.classList.add("show")
-
+    let alert = document.querySelector(".alert strong");
+    alert.innerText = error;
+    alert.parentElement.classList.add("show");
   }
-}
+};
 
+//!RENDERIZZA IL JUMBOTRON
 const fillJumboTron = async (query) => {
+  //la funzione searchSongs non puo' essere usata anche se usa lo stesso endpoint perche' la struttura del dom da riempire e' diversa
   try {
-    let res = await fetch(
-      "https://striveschool-api.herokuapp.com/api/deezer/search?q=" + query
-    )
-    let { data: songs } = await res.json()
-    let { album, title, artist, preview } = songs[0]
+    let res = await fetch(`${APIurl}/search?q=${query}`);
+    let { data: songs } = await res.json(); //prendo la prop "data" e la chiamo "songs"
+    let { album, title, artist, preview } = songs[0]; //solo le info che mi servono dal PRIMO risultato
+    //doppia decostruzione => const [primoRisultato:{album, title, artist, preview}] = song
 
-    populateElement("img.adv__cover", "src", album.cover_big)
-    populateElement(".adv__info h2", "innerText", title)
-    populateElement(".adv__info p:first-of-type", "innerText", artist.name)
-    populateElement(".adv__info p:first-of-type", "onclick", ()=> window.location.assign(`/artist.html?id=${artist.id}`))
-    
-    populateElement(".adv__info p:nth-of-type(2)", "innerText", album.title)
-    populateElement(".adv__info p:nth-of-type(2)", "onclick", ()=> window.location.assign(`/album.html?id=${album.id}`))
+    populateElement("img.adv__cover", "src", album.cover_big);
+    //NB: populateElement prende come parametri un selettore CSS, una proprieta' e un valore, vedi sotto
 
-    let playBtnJt = document.querySelector(".adv__button.play-btn")
-    playBtnJt.addEventListener("click", () => {
-      setupPlayer(title, artist.name, preview, album.cover_big)
-    })
+    populateElement(".adv__info h2", "innerText", title);
+    populateElement(".adv__info p:first-of-type", "innerText", artist.name);
+    populateElement(".adv__info p:first-of-type", "onclick", () => window.location.assign(`/artist.html?id=${artist.id}`));
+
+    populateElement(".adv__info p:nth-of-type(2)", "innerText", album.title);
+    populateElement(".adv__info p:nth-of-type(2)", "onclick", () => window.location.assign(`/album.html?id=${album.id}`));
+    populateElement(".adv__button.play-btn", "onclick", () => handlePlay(title, artist.name, preview, album.cover_big));
   } catch (error) {
-    let alert = document.querySelector(".alert strong")
-    alert.innerText = error
-    alert.parentElement.classList.add("show")
-
+    let alert = document.querySelector(".alert strong");
+    alert.innerText = error;
+    alert.parentElement.classList.add("show");
   }
-}
+};
 
+//!FUNZIONE RIUTILIZZABILE PER SETTARE UN CERTO VALORE I UNA CERTA PROPRIETA' IN UNO SPECIFICO ELEMENTO DEL DOM
 const populateElement = (elementQuery, prop, value) => {
-  let elementToPop = document.querySelector(elementQuery)
-  elementToPop[prop] = value
-}
+  let elementToPop = document.querySelector(elementQuery);
+  elementToPop[prop] = value;
+};
 
-// ! Rendering functions
+// FUNZIONI DI RENDERING:
 
+//!CREA LE CARD DELLA SEZIONE "BUON GIORNO"
+//PARAMETRO: un aggetto album
 const createRecentCard = (album) => {
-  let recentContainer = document.querySelector(".recent__container .recent")
+  let recentContainer = document.querySelector(".recent__container .recent");
   recentContainer.innerHTML += `
   <div class='col col-xs-12 col-sm-6 col-xxl-4 g-3'> 
     <div
-    class="recent__card d-flex flex-row g-0" onclick="setupPlayer('${album.tracks.data[0].title}', '${album.artist.name}', '${album.tracks.data[0].preview}', '${album.cover_medium}')"
+    class="recent__card d-flex flex-row g-0" onclick="handlePlay('${album.tracks.data[0].title}', '${album.artist.name}', '${album.tracks.data[0].preview}', '${album.cover_medium}')"
   >
     <img class="recent__card-img " src="${album.cover_medium}" />
     
@@ -100,36 +100,24 @@ const createRecentCard = (album) => {
     
     <div class="recent__card-player-button text-center my-auto d-none d-lg-block">
       <button class="text-center" >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="currentColor"
-          class="bi bi-play-fill"
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"
-          />
-        </svg>
+        <i class="bi bi-play-fill"></i>
       </button>
     </div>
   </div>
   </div>
-    `
-}
+    `;
+};
 
+//!RENDERIZZA UN ARRAY (songs) IN UN CONTAINER PASSATO COME PARAMETRO
 const renderSearchResults = (songs, container) => {
-  // title, artist, preview, cover
+  //nota! Qui container non e' un selettore ma l'elemento del DOM stesso
 
   songs.forEach((song, i) => {
     container.innerHTML += `
-    <div class=' col ${
-      i > 3 ? "d-none" : ""
-    } col-xs-6 col-sm-3 col-md-3 col-xl-2 d-xl-block'> 
-      <div class='song__card' onclick="setupPlayer('${song.title}', '${
-      song.artist.name
-    }', '${song.preview}', '${song.album.cover_big}')"> 
+    <div class=' col ${i > 3 ? "d-none" : ""} col-xs-6 col-sm-3 col-md-3 col-xl-2 d-xl-block'> 
+      <div class='song__card' onclick="handlePlay('${song.title}', '${song.artist.name}', '${song.preview}', '${
+      song.album.cover_big
+    }')"> 
         <img class='song__card-cover' src='${song.album.cover_medium}'/> 
         <div class='song__card-title mt-1 text-truncate fw-bold text-white'>  
         <a href='./album.html?id=${song.album.id}'> 
@@ -143,26 +131,19 @@ const renderSearchResults = (songs, container) => {
         </div>
       </div> 
      </div>
-     `
-  })
-}
+     `;
+  });
+};
 
 
-
-// ! Player functions
-
-
-// ! onload
+// !FUNZIONI CHIAMATE ONLOAD
 
 window.onload = async () => {
   await Promise.all([
     fetchSongs(),
-    searchSongs("pinguini tattici nucleari", "favorites"),
-    searchSongs("Chorus Line", "liked"),
-    searchSongs("High School Musical Cast", "shows"),
-    fillJumboTron("abcdef  you"),
-  ])
-  // await fetchSongs()
-  // await searchSongs("pinguini tattici nucleari")
-  // await fillJumboTron("abcdef  you")
-}
+    searchSongs("billie eilish", "favorites"),
+    searchSongs("pinguini tattici nucleari", "liked"),
+    searchSongs("bruce springsteen", "shows"),
+    fillJumboTron("exit the illest vol 3"),
+  ]);
+};

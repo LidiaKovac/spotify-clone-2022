@@ -1,73 +1,62 @@
 aside {
-    font-size: 13px;
-    z-index: 1;
-    &#sidebar__area {
-      height: calc(100vh - 100px);
-      svg {
-        width: 23px;
-        height: 23px;
+  font-size: 13px;
+  z-index: 1;
+  &#sidebar__area {
+    height: calc(100vh - 100px);
+    i {
+      font-size: 25px;
 
-        margin-right: 20px;
+      margin-right: 20px;
+      color: white;
+    }
+    .menu__area {
+      // height: 25%;
+      .menu__single {
         color: white;
+        font-size: 13px;
       }
-      .menu__area {
-        // height: 25%;
-        .menu__single {
-          color: white;
-          font-size: 13px;
-        }
-      }
-      .menu__manage-area {
-        // height: 25%;
-        
-        .manage__command-single {
-          transition: color 0.3s;
-          &:hover {
-            color: white;
-          }
-        }
-        svg {
-          &#liked-songs {
-            padding: 5px;
-            background: rgb(255, 255, 255);
-            background: -moz-linear-gradient(
-              346deg,
-              rgb(255, 255, 255, 1) 0%,
-              rgb(144, 70, 252, 1) 100%
-            );
-            background: -webkit-linear-gradient(
-              346deg,
-              rgb(255, 255, 255, 1) 0%,
-              rgb(144, 70, 252, 1) 100%
-            );
-            background: linear-gradient(
-              346deg,
-              rgb(255, 255, 255, 1) 0%,
-              rgb(144, 70, 252, 1) 100%
-            );
-            border-radius: 2px;
-          }
-          &#saved-episodes {
-            padding: 5px;
-            border-radius: 2px;
+    }
+    .menu__manage-area {
+      // height: 25%;
 
-            color: #12b038;
-            background-color: #005e17;
-          }
+      .manage__command-single {
+        transition: color 0.3s;
+        &:hover {
+          color: white;
         }
       }
-      .playlist__area {
-        overflow-y: auto;
-        .playlist__single {
-          transition: color 0.2s;
-          &:hover {
-            color: white;
-          }
+      i {
+        font-size: 15px;
+        line-height: 15px;
+        text-align: center;
+        padding: 5px;
+        border-radius: 2px;
+        &#create-playlist {
+          background-color: rgb(255, 255, 255, 1);
+          color: $secondary
+        }
+        &#liked-songs {
+          background: -moz-linear-gradient(346deg, rgb(255, 255, 255, 1) 0%, rgb(144, 70, 252, 1) 100%);
+          background: -webkit-linear-gradient(346deg, rgb(255, 255, 255, 1) 0%, rgb(144, 70, 252, 1) 100%);
+          background: linear-gradient(346deg, rgb(255, 255, 255, 1) 0%, rgb(144, 70, 252, 1) 100%);
+        }
+        &#saved-episodes {
+          color: #12b038;
+          background-color: #005e17;
         }
       }
     }
-    &#friends__area {
-      height: calc(100vh - 100px);
-
+    .playlist__area {
+      overflow-y: auto;
+      .playlist__single {
+        transition: color 0.2s;
+        &:hover {
+          color: white;
+        }
+      }
     }
   }
+  &#friends__area {
+    height: calc(100vh - 100px);
+  }
+}
