@@ -96,6 +96,8 @@ const handleInterval = (action) => {
   } else if (action === "start") {
     //* creazione nuovo interval
     startInterval(curr, counter, input);
+  } else if (action === "pause") {
+    clearInterval(interval);
   }
 };
 
@@ -153,7 +155,7 @@ const handlePlay = (
     if (isPlaying) {
       //se la musica e' in corso
       toggleMusic("pausa"); //cambiamo il pulsante da pausa a play
-
+      handleInterval("pause");
       player.pause(); //mettiamo in pausa la musica
     } else {
       handleInterval("start"); //facciamo ripartire la barra progresso da dove e' rimasta
@@ -164,14 +166,12 @@ const handlePlay = (
   }
 };
 
-
-//! GESTISCE IL VOLUME DEL PLAYER 
+//! GESTISCE IL VOLUME DEL PLAYER
 //CHIAMATA ONCHANGE SULL'INPUT RANGE DEL VOLUME
 const handleVolume = (event) => {
   const playerAudio = document.querySelector(".player audio");
   playerAudio.volume = Number(event.target.value) / 100;
 };
-
 
 //!FUNZIONI CHIAMATE AL CARICAMENTO
 loadPlaylist(); //crea le playlist nella sidebar

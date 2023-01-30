@@ -5,6 +5,8 @@ window.onload = async () => {
 
   await fetchAlbum(id)
 }
+
+//!CONERTE LA DURATA IN SECONDI IN ORE E MINUTI
 const getDurationString = (seconds) => {
   let hoursNum = seconds / 60 / 60
   let stringHours = hoursNum.toFixed(2).toString()
@@ -14,8 +16,10 @@ const getDurationString = (seconds) => {
   return `${hours} ore ${minutes} min`
 }
 
+
+//!ELIMINA LE LETTERE CON DIACRITICI E RITORNA LETTERE "BASE"
 // Non è una soluzione comprensiva di tutte le lettere con umlaut o diacritici, ma è la più vicina a cui sono potuta arrivare.
-// Chiaramente si potrebbero passare molte altre lettere come la ñ o la ç.
+// Chiaramente si potrebbero passare molte altre lettere come la ñ o la ç, inserendole semplicemente in altri .replaceAll()
 const replaceDiacritics = (string) => {
   return string
     .toLowerCase()
@@ -23,26 +27,25 @@ const replaceDiacritics = (string) => {
     .replaceAll("ä", "a")
     .replaceAll("ö", "o")
     .replaceAll("ü", "u")
+    //ritorna la stringa con le lettere sostituite
 }
 
-const fetchArtist = async (query) => {
+const fetchArtist = async (id) => {
   try {
     let res = await fetch(
-      "https://striveschool-api.herokuapp.com/api/deezer/search?q=" +
-        replaceDiacritics(query)
+      `https://striveschool-api.herokuapp.com/api/deezer/artist/${id}/top?limit=50` //Cerchiamo l'artista per id
     )
-    let { data: songs } = await res.json()
-    console.log(songs[0].artist.name.toLowerCase(), query)
+    let { data: songs } = await res.json() //isolo la proprieta' "data"
     let allAlbums = songs
-      .filter((song) => song.artist.name.toLowerCase() === query.toLowerCase())
-      .map((song) => song.album)
+      .map((song) => song.album) //creo un array dei soli album 
+      .filter((album)=> album.title.toLowerCase() !== document.querySelector("h1").innerText.toLowerCase()) //elimino l'album della pagina che stiamo vedendo
     let uniqueAlbums = []
-    allAlbums.forEach((album) => {
+    allAlbums.forEach((album) => { //creiamo un array di album unici
       if (!uniqueAlbums.map((a) => a.title).includes(album.title)) {
         uniqueAlbums.push(album)
       }
     })
-    renderRelated(uniqueAlbums)
+    renderRelated(uniqueAlbums) //rendering degli album
   } catch (error) {
     let alert = document.querySelector(".alert strong")
     alert.innerText = error
@@ -50,9 +53,12 @@ const fetchArtist = async (query) => {
   }
 }
 
+//!RENDERIZZA LA RIGA DI ALBUM "related" IN FONDO ALLA PAGINA
 const renderRelated = (arrayOfAlbums) => {
-  console.log(arrayOfAlbums)
   let relatedContainer = document.querySelector(".album__related")
+  if(arrayOfAlbums.length === 0) {
+    relatedContainer.parentElement.children[1].remove()
+  }
   arrayOfAlbums.forEach((album) => {
     relatedContainer.innerHTML += `<div onclick="location.assign('./album.html?id=${album.id}')" class='col 
       col-xs-6 col-sm-4 col-md-3 col-xl-3 d-xl-block'> 
@@ -122,7 +128,7 @@ const fetchAlbum = async (id) => {
       if (album.tracks.data.length <= 0) throw new Error("No songs!")
       else {
         populateTracks(album.tracks.data)
-        await fetchArtist(album.contributors[0].name)
+        await fetchArtist(album.contributors[0].id)
       }
     }
   } catch (error) {
@@ -144,7 +150,7 @@ const replaceQuotes = (string) => {
 const populateTracks = (tracks) => {
   let tracksCont = document.querySelector(".album__tracks")
   tracks.forEach((track, i) => {
-    tracksCont.innerHTML += `<div onclick='setupPlayer("${replaceQuotes(
+    tracksCont.innerHTML += `<div onclick='handlePlay("${replaceQuotes(
       track.title
     )}", "${replaceQuotes(track.artist.name)}", "${track.preview}", "${
       track.album.cover_big

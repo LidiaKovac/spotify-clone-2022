@@ -8,10 +8,12 @@ const APIurl = "https://striveschool-api.herokuapp.com/api/deezer";
 //CHIAMATA ONLOAD
 const fetchSongs = async () => {
   try {
-    for (const albumId of albums) {
+    for (const albumId of albums) { //equivalente di forEach, ma forEach ha bisogno di un callback che dovrebbe a sua volta asincrona
+      //per evitare problemi di sballamento dell'ordine delle operazioni usiamo un for normale
+      //Sarebbe andato bene anche un for con i :) 
       let res = await fetch(`${APIurl}/album/${albumId}`);
       let album = await res.json();
-      createRecentCard(album); //renderizza gli album nella sezione "buon pomeriggio"
+      createRecentCard(album); //renderizza gli album nella sezione "buon pomeriggio", vedi sotto
     }
   } catch (error) {
     let alert = document.querySelector(".alert strong");
@@ -134,7 +136,6 @@ const renderSearchResults = (songs, container) => {
      `;
   });
 };
-
 
 // !FUNZIONI CHIAMATE ONLOAD
 
