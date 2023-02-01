@@ -22,7 +22,8 @@ const fetchArtist = async (id) => {
   } catch (error) {
     let alert = document.querySelector(".alert strong");
     alert.innerText = error;
-    alert.parentElement.classList.add("show");
+    alert.parentElement.classList.replace("d-none", "show");
+
   }
 };
 
@@ -59,7 +60,8 @@ const fetchTracks = async (id) => {
   } catch (error) {
     let alert = document.querySelector(".alert strong");
     alert.innerText = error;
-    alert.parentElement.classList.add("show");
+    alert.parentElement.classList.replace("d-none", "show");
+
   }
 };
 
@@ -100,7 +102,7 @@ const filterPopular = async (target = document.querySelector(".discography__opti
 
     let alert = document.querySelector(".alert strong");
     alert.innerText = error;
-    alert.parentElement.classList.add("show");
+    alert.parentElement.classList.replace("d-none", "show");
   }
 };
 
@@ -143,6 +145,7 @@ const filterAlbums = async (target = document.querySelector(".discography__optio
   } catch (error) {
     let alert = document.querySelector(".alert strong");
     alert.innerText = error;
-    alert.parentElement.classList.add("show");
+    alert.parentElement.classList.replace("d-none", "show");
+
   }
 };

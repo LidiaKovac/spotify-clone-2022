@@ -18,7 +18,8 @@ const fetchSongs = async () => {
   } catch (error) {
     let alert = document.querySelector(".alert strong");
     alert.innerText = error;
-    alert.parentElement.classList.add("show");
+    alert.parentElement.classList.replace("d-none", "show");
+
   }
 };
 
@@ -47,7 +48,8 @@ const searchSongs = async (query, container) => {
   } catch (error) {
     let alert = document.querySelector(".alert strong");
     alert.innerText = error;
-    alert.parentElement.classList.add("show");
+    alert.parentElement.classList.replace("d-none", "show");
+
   }
 };
 
@@ -73,7 +75,8 @@ const fillJumboTron = async (query) => {
   } catch (error) {
     let alert = document.querySelector(".alert strong");
     alert.innerText = error;
-    alert.parentElement.classList.add("show");
+    alert.parentElement.classList.replace("d-none", "show");
+
   }
 };
 
@@ -145,6 +148,6 @@ window.onload = async () => {
     searchSongs("billie eilish", "favorites"),
     searchSongs("pinguini tattici nucleari", "liked"),
     searchSongs("bruce springsteen", "shows"),
-    fillJumboTron("exit the illest vol 3"),
+    fillJumboTron("everything i wanted billie eilish"),
   ]);
 };

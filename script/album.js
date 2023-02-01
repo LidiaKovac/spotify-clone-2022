@@ -1,5 +1,5 @@
 window.onload = async () => {
-  let url = new URLSearchParams(window.location.search)
+  let url = new URLSearchParams(location.search)
   let id = url.get("id")
   if(!id) window.location.assign("/index.html")
 
@@ -49,7 +49,8 @@ const fetchArtist = async (id) => {
   } catch (error) {
     let alert = document.querySelector(".alert strong")
     alert.innerText = error
-    alert.parentElement.classList.add("show")
+    alert.parentElement.classList.replace("d-none", "show");
+
   }
 }
 
@@ -135,7 +136,8 @@ const fetchAlbum = async (id) => {
     console.log(error)
     let alert = document.querySelector(".alert strong")
     alert.innerText = error
-    alert.parentElement.classList.add("show")
+    alert.parentElement.classList.replace("d-none", "show");
+
   }
 }
 

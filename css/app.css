@@ -10921,6 +10921,10 @@ aside#sidebar__area .menu__area .menu__single {
   color: white;
   font-size: 13px;
 }
+aside#sidebar__area .menu__area .menu__single a {
+  text-decoration: none;
+  color: inherit;
+}
 aside#sidebar__area .menu__manage-area .manage__command-single {
   transition: color 0.3s;
 }
@@ -11072,6 +11076,9 @@ aside#friends__area {
   border-radius: 5px;
   padding: 20px;
 }
+.spotify__container main .adv .adv__header {
+  font-size: 12px;
+}
 .spotify__container main .adv img.adv__cover {
   aspect-ratio: 1/1;
 }
@@ -11129,10 +11136,20 @@ aside#friends__area {
   opacity: 1;
   transition: opacity 0.3s;
 }
-.spotify__container main .favorites, .spotify__container main .shows, .spotify__container main .liked {
+.spotify__container main .favorites,
+.spotify__container main .shows,
+.spotify__container main .liked {
   width: 100%;
 }
-.spotify__container main .favorites .favorites__results, .spotify__container main .favorites .shows__results, .spotify__container main .favorites .liked__results, .spotify__container main .shows .favorites__results, .spotify__container main .shows .shows__results, .spotify__container main .shows .liked__results, .spotify__container main .liked .favorites__results, .spotify__container main .liked .shows__results, .spotify__container main .liked .liked__results {
+.spotify__container main .favorites .favorites__results,
+.spotify__container main .favorites .shows__results,
+.spotify__container main .favorites .liked__results,
+.spotify__container main .shows .favorites__results,
+.spotify__container main .shows .shows__results,
+.spotify__container main .shows .liked__results,
+.spotify__container main .liked .favorites__results,
+.spotify__container main .liked .shows__results,
+.spotify__container main .liked .liked__results {
   width: 100%;
   overflow-y: auto;
   margin-left: 0px;

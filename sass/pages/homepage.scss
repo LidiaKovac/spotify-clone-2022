@@ -4,7 +4,7 @@
   background: -moz-linear-gradient(180deg, $grey 32%, $secondary 64%);
   background: -webkit-linear-gradient(180deg, $grey 32%, $secondary 64%);
   background: linear-gradient(180deg, $grey 32%, $secondary 64%);
-  
+
   main {
     overflow-y: auto;
     height: calc(100vh - 100px);
@@ -18,16 +18,15 @@
     .adv {
       margin: 10px;
       background: -moz-linear-gradient(-145deg, transparent 10%, $primary 100%);
-      background: -webkit-linear-gradient(
-        -145deg,
-        transparent 10%,
-        $primary 100%
-      );
+      background: -webkit-linear-gradient(-145deg, transparent 10%, $primary 100%);
       background: linear-gradient(-145deg, transparent 10%, $primary 100%);
       border-radius: 5px;
       padding: 20px;
+      .adv__header {
+        font-size: 12px;
+      }
       img.adv__cover {
-          aspect-ratio: 1/1;
+        aspect-ratio: 1/1;
       }
       button.adv__button {
         padding: {
@@ -94,13 +93,16 @@
         }
       }
     }
-    .favorites, .shows, .liked {
+    .favorites,
+    .shows,
+    .liked {
       width: 100%;
-      .favorites__results, .shows__results, .liked__results {
+      .favorites__results,
+      .shows__results,
+      .liked__results {
         width: 100%;
         overflow-y: auto;
         margin-left: 0px;
-        
       }
     }
   }
