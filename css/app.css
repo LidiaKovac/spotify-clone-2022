@@ -11250,6 +11250,31 @@ main .album__data .album__related::-webkit-scrollbar {
   display: none;
 }
 
+.search__container {
+  padding: 20px;
+  background-color: #101010;
+}
+.search__container button {
+  background-color: #212121;
+  border-radius: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: none;
+  color: white;
+}
+.search__container button.selected {
+  background-color: #fff;
+  border-radius: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: none;
+  color: black;
+}
+
 * {
   box-sizing: border-box;
 }

@@ -1,0 +1,28 @@
+@mixin navButtons($color) {
+  background-color: $color;
+  border-radius: 20px;
+  padding: {
+    left: 15px;
+    right: 15px;
+    top: 5px;
+    bottom: 5px
+  };
+  border: none;
+  @if ($color == white) {
+    color: black;
+  } @else {
+    color: white;
+  }
+}
+
+.search__container {
+    padding: 20px;
+    background-color: $secondary;
+  button {
+    @include navButtons($grey);
+    &.selected {
+    @include navButtons($white)
+
+    }
+  }
+}
